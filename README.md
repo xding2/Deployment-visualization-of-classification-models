@@ -27,4 +27,31 @@ python3 -m venv env
 source env/bin/activate  # On Windows, use `env\Scripts\activate`
 ```
 
+3. Install Dependencies
+
+After activating the virtual environment, you need to install necessary dependencies. The main dependencies are Flask and transformers.
+
+```python
+pip install flask transformers openai transformers_interpret
+```
+
+4. Set OpenAI API Key
+
+Replace # change to your openai key here "sk-##########################" in the code with your actual OpenAI API key. Please do not share your OpenAI API key publicly.
+
+5. Start the Application
+
+You can start the application by running the python script.
+
+```python
+python3 run demo.py
+```
+
+6. Use the Web App
+
+The demo application has an input field where you can enter text to classify. After you submit the text, it gets classified by the three models, and the results are displayed on the page. The result includes:
+
+- Classification labels from the BERT, RoBERTa, and GPT-3 models.
+- Confidence scores from the models.
+- Important words considered by the GPT-3 model.
 
