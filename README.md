@@ -64,7 +64,7 @@ ToxVis: Enabling Interpretability of Implicit vs. Explicit Toxicity Detection Mo
 	title = {{ToxVis}: Enabling Interpretability of Implicit vs. Explicit Toxicity Detection Models with Interactive Visualization},
 	author = {Gunturi, Uma and Ding, Xiaohan and Rho, Eugenia H.},
 	journal = {arxiv preprint arXiv::2303.09402},
-  year={2023},
+  	year={2023},
 }
 ```
 
