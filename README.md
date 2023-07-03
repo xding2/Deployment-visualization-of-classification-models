@@ -10,4 +10,21 @@ To use this web application, you'll need:
 - Flask
 - Transformers library from Hugging Face
 - OpenAI API key
+  
 Additionally, make sure to have GPU support if you're planning to use this application on a large scale as model loading and inference could be resource-intensive.
+
+### How to Use
+1. Clone the Repository
+
+First, clone this repository to your local system using git.
+
+2. Setup Environment
+
+It's recommended to setup a Python virtual environment before proceeding. You can use the venv module for that.
+
+```python
+python3 -m venv env
+source env/bin/activate  # On Windows, use `env\Scripts\activate`
+```
+
+
