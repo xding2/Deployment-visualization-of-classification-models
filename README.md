@@ -2,6 +2,7 @@
 
 ## Hate Speech Detection Web App
 This is a demo application built using Flask, OpenAI's GPT-3 and Huggingface's transformers library. It utilizes three different models for hate speech detection, providing an insightful comparison of their outputs. The first two models are BERT and RoBERTa-based models that are trained to classify hate speech. And the token-level interpretation of classification model results can be performed by _transformers_interpret_ [https://github.com/cdpierse/transformers-interpret]. The third model is OpenAI's GPT-3, used to interpret the result.
+
 <img width="628" alt="image" src="https://github.com/xding2/Deployment-visualization-of-classification-models/assets/79544136/730b5c54-579a-471d-871f-a8b55b39a1ce">
 
 ### Prerequisites
