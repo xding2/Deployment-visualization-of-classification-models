@@ -59,7 +59,7 @@ The demo application has an input field where you can enter text to classify. Af
 
 ToxVis: Enabling Interpretability of Implicit vs. Explicit Toxicity Detection Models with Interactive Visualization: [https://arxiv.org/pdf/2303.09402.pdf]
 
-```python
+```
 @article{gunturi_toxvis_2023,
 	title = {{ToxVis}: Enabling Interpretability of Implicit vs. Explicit Toxicity Detection Models with Interactive Visualization},
 	author = {Gunturi, Uma and Ding, Xiaohan and Rho, Eugenia H.},
