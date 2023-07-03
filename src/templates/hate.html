@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Bootstrap UI Kit">
+    <meta name="keywords" content="ui kit">
+
+
+    <title>Hate Speech Detection</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/assets/css/main.css">
+    <link rel="stylesheet" href="static/assets/css/animate.css">
+    <link rel="stylesheet" href="static/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="static/assets/css/owl.theme.css">
+    <link rel="stylesheet" href="static/assets/css/responsive.css">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/assets/css/main.css">
+    <link rel="stylesheet" href="static/assets/css/animate.css">
+    <link rel="stylesheet" href="static/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="static/assets/css/owl.theme.css">
+    <link rel="stylesheet" href="static/assets/css/responsive.css">
+
+    <!-- Fonts icons -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin: 0 auto;
+        }
+
+        td,
+        th {
+            padding: 0;
+        }
+
+        .pure-table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            empty-cells: show;
+            border: 1px solid #cbcbcb;
+            margin: 0 auto;
+        }
+
+        .pure-table caption {
+            color: #000;
+            font: italic 85%/1 arial, sans-serif;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        .pure-table td,
+        .pure-table th {
+            border-left: 1px solid #cbcbcb;
+            border-width: 0 0 0 1px;
+            font-size: inherit;
+            margin: 0;
+            overflow: visible;
+            padding: .5em 1em;
+        }
+
+        .pure-table thead {
+            background-color: #e0e0e0;
+            color: #000;
+            text-align: left;
+            vertical-align: bottom;
+        }
+
+        .pure-table td {
+            background-color: transparent;
+        }
+
+        .pure-table-horizontal td,
+        .pure-table-horizontal th {
+            border-width: 0 0 1px 0;
+            border-bottom: 1px solid #cbcbcb;
+        }
+
+        .pure-table-horizontal tbody>tr:last-child>td {
+            border-bottom-width: 0;
+        }
+
+        .prediction-text {
+            max-width: 600px;
+            word-wrap: break-word;
+        }
+
+        .my-custom-btn {
+            background-color: #f5bbbb;
+            border-color: #f5bbbb;
+        }
+
+        .my-custom-btn2 {
+            background-color: #d4bd54;
+            border-color: #d4bd54;
+        }
+
+        .my-custom-btn3 {
+            background-color: #94e972;
+            border-color: #94e972;
+        }
+
+        .my-custom-btn4 {
+            background-color: #75ece2;
+            border-color: #75ece2;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        function copyText() {
+            const textToCopy = document.querySelector('p');
+            textToCopy.select();
+            document.execCommand('copy');
+            alert('Text copied to clipboard');
+        }
+
+        function toggleParagraph1() {
+            var x = document.getElementById("myParagraph1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function toggleParagraph2() {
+            var x = document.getElementById("myParagraph2");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function toggleParagraph3() {
+            var x = document.getElementById("myParagraph3");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function toggleParagraph4() {
+            var x = document.getElementById("myParagraph4");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Page Wrapper Start -->
+    <div class="wrapper">
+        <!-- Content Area Start -->
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h2 class="heading-title text-center">🧐 Hate Speech Detection 📖 </h2>
+                        </div>
+                        <div class="header-newslatter">
+
+                            <form action="{{ url_for('hate')}}" method="post" role="form" class="php-email-form"
+                                onsubmit="return validateForm()">
+
+                                <div class="input-button-container">
+                                    <!--<i class="lni-envelope"></i>-->
+                                    <textarea id="context" class="form-control" name="test_score-1" rows="5"
+                                        data-rule="required" data-msg="Please write something for us"
+                                        placeholder="Message" style="
+                                    width: 450px;
+                                    height: 150px;
+                                    border-radius: 10px;
+                                    margin: 0 auto;
+                                    display: block;">{{ context }}</textarea>
+                                </div>
+                                <br>
+                                <div class="text-center">
+                                    <button type="submit" id="detect-button" style="margin-left: 50px;
+                                                            border-radius: 20px;  /* rounded corners */
+                                                            background: linear-gradient(to right, #265dec, #84f151);  /* gradient color */
+                                                            color: white;  /* text color */
+                                                            padding: 10px 20px;  /* button padding */"> 🧐 DETECTOR
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+
+
+                        <br>
+                        <div style="width: 50%; margin: 0 auto;">
+                            <br>
+                            <div id="display-result" class="text-danger">CHECK YOUR INPUT <br> {{ sent_list }}</div>
+                            <script>
+                                document.getElementById("detect-button").addEventListener("click", function () {
+                                    var context = document.getElementById("context").value;
+                                    document.getElementById("display-result").innerHTML = "The user input is: " + context;
+                                });
+                            </script>
+                            <!--onclick="window.location.href = 'https://google.com';"-->
+                            <br>
+                            <div id = '111'>
+                                <button style="color: black;" class="btn btn-primary my-custom-btn"
+                                    onclick="toggleParagraph3()">🌳 Fine-Tuned <a
+                                        href="https://huggingface.co/docs/transformers/model_doc/xlnet"
+                                        style="color: black; text-decoration: underline;"
+                                        target="_blank">XLNet</a></button>
+                                <!--<p id="myParagraph3" style="display:none" class="mt-3"><span id="prediction-text-1">{{
+                                    prediction_text
+                                    }}</span>
+                            </p>-->
+
+                                <div id="myParagraph3" style="display:none" class="mt-3">
+                                    <div class="prediction-text">
+                                        {{ prediction_text1 }}
+                                    </div>
+                                    <br>
+                                    <div style="width: 500px; overflow: auto;">
+                                        <div style="display: flex;">
+                                            {% for token in token_weight1 %}
+                                            {% if token[1] > 0 %}
+                                            <div style="background-color: #84f151; color: white; padding: 10px 20px; margin: 10px;"
+                                                title="Score: {{token[1]}}">
+                                                {{ token[0] }}
+                                            </div>
+                                            {% elif token[1] < 0 %} <div
+                                                style="background-color: #265dec; color: white; padding: 10px 20px; margin: 10px;"
+                                                title="Score: {{token[1]}}">
+                                                {{ token[0] }}
+                                        </div>
+                                        {% else %}
+                                        <div style="background-color: gray; color: white; padding: 10px 20px; margin: 10px;"
+                                            title="Score: {{token[1]}}">
+                                            {{ token[0] }}
+                                        </div>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <br>
+                                </div>
+                                {{ prediction_score1 }}
+                            </div>
+                            <br>
+                            <br>
+                            <div id = '222'>
+                                <button style="color: black;" class="btn btn-primary my-custom-btn2"
+                                    onclick="toggleParagraph2()">🌳 Fine-Tuned <a
+                                        href="https://huggingface.co/docs/transformers/model_doc/roberta"
+                                        style="color: black; text-decoration: underline;"
+                                        target="_blank">RoBERTa</a></button>
+                                <!--<p id="myParagraph3" style="display:none" class="mt-3"><span id="prediction-text-1">{{
+                                    prediction_text
+                                    }}</span>
+                            </p>-->
+
+                                <div id="myParagraph2" style="display:none" class="mt-3">
+                                    <div class="prediction-text">
+                                        {{ prediction_text2 }}
+                                    </div>
+                                    <br>
+                                    <div style="width: 500px; overflow: auto;">
+                                        <div style="display: flex;">
+                                            {% for token in token_weight2 %}
+                                            {% if token[1] > 0 %}
+                                            <div style="background-color: #84f151; color: white; padding: 10px 20px; margin: 10px;"
+                                                title="Score: {{token[1]}}">
+                                                {{ token[0] }}
+                                            </div>
+                                            {% elif token[1] < 0 %} <div
+                                                style="background-color: #265dec; color: white; padding: 10px 20px; margin: 10px;"
+                                                title="Score: {{token[1]}}">
+                                                {{ token[0] }}
+                                        </div>
+                                        {% else %}
+                                        <div style="background-color: gray; color: white; padding: 10px 20px; margin: 10px;"
+                                            title="Score: {{token[1]}}">
+                                            {{ token[0] }}
+                                        </div>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <br>
+                                </div>
+                                {{ prediction_score2 }}
+                            </div>
+                            <br>
+                            <br>
+                            <div id = '333'>
+                                <button style="color: black;" class="btn btn-primary my-custom-btn3"
+                                    onclick="toggleParagraph1()">🌳 Few-Shot <a
+                                        href="https://openai.com/"
+                                        style="color: black; text-decoration: underline;"
+                                        target="_blank">GPT-3</a></button>
+                                <!--<p id="myParagraph3" style="display:none" class="mt-3"><span id="prediction-text-1">{{
+                                    prediction_text
+                                    }}</span>
+                            </p>-->
+
+                                <div id="myParagraph1" style="display:none" class="mt-3">
+                                    <div class="prediction-text">
+                                    {{ prediction_text3 }}
+                                    </div>
+                                    <br>
+                                    {{ attriution_words }}
+                                    <br>
+                                    <br>
+                                    {{ prediction_score3 }}
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div>
+                    <table class="pure-table pure-table-horizontal">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Model</th>
+                            <th>Input</th>
+                            <th>Label</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>{{ num1 }}</td>
+                            <td>{{ M1 }}</td>
+                            <td>{{ sent_list }}</td>
+                            <td>{{ prediction_text }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{{ num2 }}</td>
+                            <td>{{ M2 }}</td>
+                            <td>{{ sent_list }}</td>
+                            <td>{{ prediction_text }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{{ num3 }}</td>
+                            <td>{{ M3 }}</td>
+                            <td>{{ sent_list }}</td>
+                            <td>{{ prediction_text }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>-->
+
+
+                    <div class="row">
+                        <!-- headings -->
+                        <!--<div class="col-md-3 col-sm-6">
+                          <h4 class="sub-title">Headings</h4>
+                          <h1>H1 Heading</h1>
+                          <h2>H2 Heading</h2>
+                          <h3>H3 Heading</h3>
+                          <h4>H4 Heading</h4>
+                          <h5>H5 Heading</h5>
+                          <h6>H6 Heading</h6>
+                        </div>-->
+                        <!-- paragraphs -->
+
+                        <!--<div class="col-md-5 col-sm-6">
+                            <h4 class="sub-title">Paragraphs</h4>
+                            <p class="lead"><strong>Large Paragraph:</strong> But I must explain to you how all this
+                                mistaken idea of denouncing pleasure and praising pain was born and I will give you a
+                                complete account of the system</p>
+                            <p><strong>Regular Paragraph:</strong> But I must explain to you how all this mistaken idea
+                                of denouncing pleasure and praising pain was born and I will give you a complete account
+                                of the system</p>
+                            <p class="text-sm"><strong>Small Paragraph:</strong> But I must explain to you how all this
+                                mistaken idea of denouncing pleasure and praising pain was born and I will give you a
+                                complete account of the system</p>
+                            <p class="text-xs"><strong>Extra Small Paragraph:</strong> But I must explain to you how all
+                                this mistaken idea of denouncing pleasure and praising pain was born and I will give you
+                                a complete account of the system</p>
+                        </div>-->
+
+                        <!-- lists -->
+                        <!--<div class="col-md-4 col-sm-6">
+                          <h4 class="sub-title">Lists</h4>
+                          <ul class="list-featured space-bottom-20">
+                            <li>Far far away, behind the word mountains</li>
+                            <li>Hen she reached the first hills</li>
+                            <li>Vestibulum nisi nibh, pulvinar sit amet lacinia</li>
+                            <li>Mauris pretium elit ac facilisis mollis posuere</li>
+                            <li>Mauris vitae magna in dolor porta aliquam</li>
+                          </ul>
+                          <ol>
+                            <li>Far far away, behind the word mountains</li>
+                            <li>Morbi quis neque non nisl egestas laoreet</li>
+                            <li>Vestibulum nisi nibh, pulvinar sit amet</li>
+                            <li>Mauris pretium elit ac facilisis mollis</li>
+                            <li>Mauris vitae magna in dolor porta aliquam</li>
+                          </ol>
+                        </div>-->
+                    </div>
+
+                    <div class="mb-60"></div>
+
+                </div>
+
+                <div class="mb-60"></div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Content Area End -->
+    <p class="text-center pb-60">Create by SAIL Lab: Xiaohan Ding, Eugenia Rho.</a></p>
+    </div>
+    <!-- Page Wrapper End -->
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="static/assets/js/jquery.min.js"></script>
+    <script src="static/assets/js/popper.min.js"></script>
+    <script src="static/assets/js/bootstrap.min.js"></script>
+    <script src="static/assets/js/owl.carousel.min.js"></script>
+
+    <script src="static/assets/js/form-validator.min.js"></script>
+    <script src="static/assets/js/contact-form-script.js"></script>
+    <script src="static/assets/js/main.js"></script>
+</body>
+
+</html>
